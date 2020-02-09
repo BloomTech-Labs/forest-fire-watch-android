@@ -117,6 +117,7 @@
         app:srcCompat="@drawable/meter_clipart" />
 
 
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="500dp"

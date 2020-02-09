@@ -148,13 +148,13 @@ class DataRepository: DataRepositoryWatcher {
     fun cleanAQIStationData(aqiStations: List<AQIStations>?) :List<AQIStations> {
         var count = 0
        val set = aqiStations?.toSet()
-        val mutListResult = arrayOfNulls<AQIStations>(set?.size ?: 1)
+        val mutListResult =    mutableListOf<AQIStations>()/// arrayOfNulls<AQIStations>(set?.size ?: 1)
         set?.forEach{
             if (!it.aqi.isBlank() && it.aqi.toIntOrNull() != null) {
-                mutListResult[count++] = it
+                mutListResult.add(it)
             }
         }
-        return mutListResult.toList() as List<AQIStations>
+        return mutListResult.toList()
     }
 
 
